@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title></title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.6/d3.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"></script>
+  </head>
+  <body>
+    <div class="content">
+      <div class="product-text">
+        <h1>BluPrint</h1>
+        <p class="sub-headline">All of the information you need, <br> immediately.</p>
+        <p class="learn-more"><a href="#">Learn More &rsaquo;</a></p>
+      </div>
+      
+      
+      
+      <div class="product">
+        <div id="chart"></div>
+        <p>
+          <a href="#"><img src="img/google_play.png" alt="Download BluPint from the Google Play Store" width="120"></a>
+          <a href="#"><img src="img/app-store-logo.jpg" alt="Download BluPint from the Apple App Store" width="130"></a>
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      d3.json("history.json", function(data) {
+        var statData = [];
+        console.log(data);
+        data.services.forEach(function(d, i) {
+          var item = [d.name + ' - ' + d.status];
+          var itemMessage = [d.message];
+          d.values.forEach(function(j) {
+            item.push(j);
+            // itemMessage.push(j);
+          });
+          statData.push(item);
+        });
+        var chart = c3.generate({
+          data: {
+            columns: statData
+          }
+        });
+      });
+      // Suppossed to divide by 24 at some point...will ask someone who has done that.
+    </script>
+  </body>
+</html>
