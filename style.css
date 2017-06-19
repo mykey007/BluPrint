@@ -1,5 +1,5 @@
 @import url('//normalize-css.googlecode.com/svn/trunk/normalize.min.css');
-@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('//fonts.googleapis.com/css?family=Oswald');
 
 /*  
  #42ab9e - green
@@ -7,7 +7,7 @@
 */
 
 body {
-	/*background-color: hsl(206, 100%, 58%);*/
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAGUlEQVQImWNIKL/tiwszJJTf9mXABQabJADsDBn0cAxsQAAAAABJRU5ErkJggg==') repeat;
 	font-family: 'Oswald', sans-serif;
 	font-size: 17px;
 	font-weight: 400;
