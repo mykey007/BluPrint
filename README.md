@@ -6,7 +6,7 @@
     python -m SimpleHTTPServer
 ~~~
 
-4: In a browser of your choice, goto
+4. In a browser of your choice, goto
 ~~~
     localhost:8000/
 ~~~
